@@ -575,3 +575,6 @@ st.caption(
     "FOUNDAX AI | Machine Learning Research Module"
 )
 
+from download_model import ensure_model
+
+ensure_model()
