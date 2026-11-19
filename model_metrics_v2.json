@@ -1,0 +1,19 @@
+{
+    "algorithm": "Random Forest Regressor",
+    "dataset_type": "Synthetic formula-generated",
+    "total_records": 5000,
+    "training_records": 4000,
+    "testing_records": 1000,
+    "training_fraction": 0.8,
+    "testing_fraction": 0.2,
+    "random_state": 42,
+    "n_estimators": 200,
+    "features": [
+        "column_load_kN",
+        "sbc_kN_m2"
+    ],
+    "target": "footing_length_m",
+    "test_mae_m": 0.02599099999999997,
+    "test_rmse_m": 0.035321148056086715,
+    "test_r2": 0.9984338974992191
+}
