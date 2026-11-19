@@ -169,7 +169,6 @@ def home():
 home_page = st.Page(
     home,
     title="Home",
-    icon="🏠",
     default=True,
 )
 
