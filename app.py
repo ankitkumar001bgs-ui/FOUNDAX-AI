@@ -49,7 +49,7 @@ for name, filename, description in MODULES:
         st.markdown(f"**{name}**")
         st.caption(description)
         if path.is_file():
-            st.page_link(f"pages/{filename}", label=f"Open {name}")
+            st.markdown(f" **{name}** — Sidebar se page select karein.")
         else:
             st.info(
                 f"Page not found: pages/{filename}. "
