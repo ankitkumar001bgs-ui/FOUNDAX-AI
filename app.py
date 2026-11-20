@@ -163,32 +163,52 @@ def home():
 
 
 # ==========================================
-# Navigation Setup
+# Welcome Screen (shown first in each new session)
 # ==========================================
 
-home_page = st.Page(
-    home,
-    title="Home",
-    default=True,
-)
+def welcome():
+    st.markdown("<div style='height: 7vh'></div>", unsafe_allow_html=True)
+    left, center, right = st.columns([1, 2.5, 1])
+    with center:
+        st.markdown(
+            """<div style="text-align:center;padding:28px 10px 20px;">
+              <p style="font-size:14px;letter-spacing:3px;font-weight:700;color:#0d9488;">
+                CIVIL ENGINEERING · INTELLIGENT DESIGN</p>
+              <h1 style="font-size:clamp(42px,6vw,76px);line-height:1.12;
+                  margin:12px 0 18px;"> FOUNDAX AI</h1>
+              <p style="font-size:clamp(17px,2vw,23px);line-height:1.5;">
+                ML-Based Prediction &amp; Preliminary Optimization<br>of Footing Design</p>
+              <div style="height:4px;width:90px;background:#0d9488;
+                  margin:28px auto;border-radius:20px;"></div>
+              <p style="font-size:18px;font-weight:700;">Government Engineering College Khagaria</p>
+              <p style="font-size:15px;opacity:.85;">Session 2023–2027 · Guided by Dr. Irfan Ansari</p>
+            </div>""",
+            unsafe_allow_html=True,
+        )
+        st.write("")
+        if st.button("🚀 Let's Get Started →", type="primary", use_container_width=True):
+            st.session_state["foundax_started"] = True
+            st.rerun()
+        st.caption("Educational prototype · Preliminary results only · Not for construction")
 
-navigation_sections = {
-    "Home": [home_page],
-}
 
-if registered_pages:
-    navigation_sections["Project Modules"] = list(
-        registered_pages.values()
+# ==========================================
+# Navigation: show ONLY welcome until button is clicked
+# ==========================================
+
+if not st.session_state.get("foundax_started", False):
+    welcome_page = st.Page(welcome, title="Welcome", default=True)
+    selected_page = st.navigation([welcome_page], position="hidden")
+else:
+    home_page = st.Page(home, title="Home", default=True)
+    navigation_sections = {"Home": [home_page]}
+    if registered_pages:
+        navigation_sections["Project Modules"] = list(registered_pages.values())
+    selected_page = st.navigation(
+        navigation_sections,
+        position="sidebar",
+        expanded=True,
     )
 
-# ==========================================
-# Run Selected Page
-# ==========================================
-
-selected_page = st.navigation(
-    navigation_sections,
-    position="sidebar",
-    expanded=True,
-)
-
 selected_page.run()
+
