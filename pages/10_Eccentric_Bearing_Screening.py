@@ -6,6 +6,9 @@ import pandas as pd
 import streamlit as st
 
 st.title("Real Building — Eccentric Bearing Screening")
+from formula_reference_guide import show_reference_guide
+show_reference_guide("combined")
+
 st.caption("Phase 2 | Load and moment screening for rectangular isolated footing footprints")
 st.warning("Preliminary service-level soil pressure screening ONLY. Not structural design or construction approval. The linear full-contact pressure model is invalid when contact tension is predicted. Settlement, load combinations, sliding, overturning, uplift, structural shear/flexure, reinforcement and code compliance are not verified.")
 

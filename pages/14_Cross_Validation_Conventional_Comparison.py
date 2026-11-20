@@ -6,6 +6,9 @@ from cross_validation_engine import run_cv
 from ml_comparison_engine import TARGETS
 
 st.title("Cross-Validation & Conventional Sizing Comparison")
+from formula_reference_guide import show_reference_guide
+show_reference_guide("ml")
+
 st.caption("College proposal Phase 6 · Reproducible 5-fold evaluation · Educational research")
 st.warning("The dataset is synthetic. This page compares predictions to synthetic targets and the idealized A=P/SBC sizing baseline, NOT to verified structural designs or actual construction costs.")
 DATA=Path(__file__).resolve().parents[1]/'dataset'/'isolated_footing_dataset.csv'

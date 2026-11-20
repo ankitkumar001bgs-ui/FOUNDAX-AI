@@ -306,6 +306,9 @@ def make_sheet(figures, details):
 
 
 st.title('FOUNDAX AI | Professional Footing Drawing Studio')
+from formula_reference_guide import show_reference_guide
+show_reference_guide("drawing")
+
 st.caption('Dimensioned 2D plan • Section A–A • 3D isometric • A3 PDF drawing sheets')
 st.warning('Preliminary schematic only. Structural capacity, settlement, reinforcement and code compliance are not verified. Not for construction.')
 

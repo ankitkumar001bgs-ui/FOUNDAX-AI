@@ -10,6 +10,9 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from case_study_validation_engine import REQUIRED, compare_footing
 
 st.title('Real Building Validation & Cost Comparison')
+from formula_reference_guide import show_reference_guide
+show_reference_guide("combined")
+
 st.caption('Phase 7 | College project case-study evidence, geometric bearing screening and partial quantity/cost comparison')
 st.warning('This is NOT a complete footing design or a code-compliance certificate. The comparison alternative has no validated thickness, reinforcement, shear, settlement or structural adequacy. Do not use its cost difference as proven savings.')
 

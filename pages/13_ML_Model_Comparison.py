@@ -5,6 +5,9 @@ import streamlit as st
 from ml_comparison_engine import TARGETS, evaluate_models
 
 st.title("ML Model Comparison & Validation")
+from formula_reference_guide import show_reference_guide
+show_reference_guide("ml")
+
 st.caption("College proposal: Linear Regression · Random Forest · XGBoost · ANN | Reproducible held-out evaluation")
 st.warning("This is a synthetic-data benchmark, NOT validation on real building footing designs or proof of IS 456 compliance. High R² alone does not establish structural safety.")
 DATA = Path(__file__).resolve().parents[1] / "dataset" / "isolated_footing_dataset.csv"

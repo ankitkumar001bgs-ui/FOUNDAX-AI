@@ -74,10 +74,11 @@ LEGENDS = {
     ],
 }
 LEGENDS["report"] = LEGENDS["isolated"]
+LEGENDS["validation"] = LEGENDS["ml"]
 
 def show_reference_guide(section: str) -> None:
     """Display a non-intrusive expandable educational explanation."""
-    with st.expander("📘 Formula symbols, units & relevant IS Code references", expanded=False):
+    with st.expander("Formula symbols, variables, units & IS Code context", expanded=False):
         st.markdown("**Symbols used in this module**")
         st.table([
             {"Symbol / Term": symbol, "Meaning": meaning, "Unit": unit}

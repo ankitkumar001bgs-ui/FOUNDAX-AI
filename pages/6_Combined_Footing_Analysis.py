@@ -5,6 +5,9 @@ import streamlit as st
 
 st.title("Combined Footing Analysis")
 
+from formula_reference_guide import show_reference_guide
+show_reference_guide("combined")
+
 st.write(
     "Preliminary geometric and soil-pressure analysis "
     "of a rectangular combined footing supporting "

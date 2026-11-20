@@ -20,6 +20,9 @@ from sklearn.metrics import (
 
 st.title("Machine Learning-Based Footing Prediction")
 
+from formula_reference_guide import show_reference_guide
+show_reference_guide("ml")
+
 st.write(
     "Random Forest regression for preliminary "
     "square isolated footing dimension prediction."

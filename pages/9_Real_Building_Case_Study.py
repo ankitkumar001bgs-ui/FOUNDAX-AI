@@ -7,6 +7,9 @@ import pandas as pd
 import streamlit as st
 
 st.title('Real Building Footing Case Study')
+from formula_reference_guide import show_reference_guide
+show_reference_guide("combined")
+
 st.caption('College proposal: documented real-building case study | Preliminary engineering screening only')
 st.warning('This tool does NOT produce a construction-ready footing design. Soil settlement, eccentric loading, load combinations, structural bending/shear, reinforcement and detailed IS-code compliance require verified engineering assessment.')
 

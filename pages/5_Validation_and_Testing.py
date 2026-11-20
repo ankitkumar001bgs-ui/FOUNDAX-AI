@@ -31,6 +31,9 @@ TEST_SCRIPT = PROJECT_DIR / "test_footing.py"
 
 st.title("Validation and Testing")
 
+from formula_reference_guide import show_reference_guide
+show_reference_guide("validation")
+
 st.write(
     "This page documents the numerical testing, "
     "machine learning evaluation and current "

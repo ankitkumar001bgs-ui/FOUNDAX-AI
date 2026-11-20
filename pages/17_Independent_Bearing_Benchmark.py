@@ -4,6 +4,9 @@ import pandas as pd
 from verification_engine import bearing_check
 
 st.title('Independent Calculation Benchmark')
+from formula_reference_guide import show_reference_guide
+show_reference_guide("isolated")
+
 st.caption('Transparent hand-calculation comparison for preliminary soil bearing only. Not a structural design certificate.')
 st.info('Use service-level loads and an SBC defined on a consistent gross/net basis. Self-weight allowance is an illustrative percentage, not a substitute for actual footing and soil weights.')
 with st.form('benchmark_inputs'):

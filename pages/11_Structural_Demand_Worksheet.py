@@ -6,6 +6,9 @@ import pandas as pd
 import streamlit as st
 
 st.title("Real Building — Structural Demand Worksheet")
+from formula_reference_guide import show_reference_guide
+show_reference_guide("isolated")
+
 st.caption("College proposal | Factored bending, one-way shear and punching shear action estimates")
 st.error("NOT a complete or approved footing design. This worksheet estimates actions only. It does not verify IS 456 shear/flexural capacities, anchorage, reinforcement, settlement or IS-code compliance. A qualified engineer must review loads, geometry and calculations.")
 st.markdown("Enter **factored vertical action** and a **factored uniform upward soil pressure** that has been independently justified for the governing load combination. Do not substitute service SBC for factored pressure. The model assumes a concentric, centrally loaded rectangular isolated footing with full soil contact; eccentricity, edge/combined footing and nonlinear contact are out of scope.")

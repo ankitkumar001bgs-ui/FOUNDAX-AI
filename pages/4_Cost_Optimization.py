@@ -6,6 +6,9 @@ import streamlit as st
 from scipy.optimize import differential_evolution
 
 st.title("Footing Cost Optimization")
+from formula_reference_guide import show_reference_guide
+show_reference_guide("cost")
+
 st.subheader("Differential Evolution Algorithm")
 
 st.write(

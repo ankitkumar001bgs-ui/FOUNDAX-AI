@@ -3,6 +3,9 @@ import pandas as pd
 from capacity_screening import calculate
 
 st.title("Real Building — Reinforcement & Capacity Screening")
+from formula_reference_guide import show_reference_guide
+show_reference_guide("isolated")
+
 st.error("EDUCATIONAL SCREENING ONLY — not an IS 456 compliance certificate or construction design. Engineer-supplied permissible stress limits and x_u limit must be independently verified from the applicable code and project conditions. No settlement, anchorage, minimum steel, crack control, eccentricity, or full detailing verification is performed.")
 st.markdown("**Scope:** Interior, concentric rectangular isolated footing with uniform factored soil pressure and full contact. One-way and punching shear *stress demand* is compared against **user-supplied limits**, not auto-derived IS 456 capacity.")
 with st.expander("Equations and conventions"):

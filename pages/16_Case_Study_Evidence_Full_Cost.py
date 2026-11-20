@@ -3,6 +3,9 @@ import pandas as pd
 import streamlit as st
 
 st.title('Case Study Evidence & Full Cost Worksheet')
+from formula_reference_guide import show_reference_guide
+show_reference_guide("cost")
+
 st.caption('Phase 8 | Document actual inputs, compare quantities and identify missing engineering verification')
 st.warning('Costs here are estimates based on USER-ENTERED quantities. The app does not calculate structural adequacy, approve reinforcement, or certify an optimized design. Lower cost is NOT proven savings.')
 

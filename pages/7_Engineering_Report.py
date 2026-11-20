@@ -26,6 +26,9 @@ from reportlab.lib.units import inch
 
 st.title("Engineering Calculation Report")
 
+from formula_reference_guide import show_reference_guide
+show_reference_guide("report")
+
 st.write(
     "Generate a detailed preliminary calculation "
     "report for a centrally loaded square isolated footing."

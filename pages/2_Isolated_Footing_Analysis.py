@@ -4,6 +4,9 @@ import pandas as pd
 import streamlit as st
 
 st.title("Isolated Footing Analysis")
+from formula_reference_guide import show_reference_guide
+show_reference_guide("isolated")
+
 st.write(
     "Preliminary analysis of a centrally loaded "
     "square isolated footing."
