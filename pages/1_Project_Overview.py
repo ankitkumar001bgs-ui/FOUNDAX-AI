@@ -1,3 +1,4 @@
+from formula_reference_guide import show_reference_guide
 
 import streamlit as st
 
@@ -73,3 +74,7 @@ st.warning(
     "engineering-code compliance are not verified. "
     "The software must not be used for construction."
 )
+
+
+# Educational glossary and standards (does not alter calculations)
+show_reference_guide("overview")

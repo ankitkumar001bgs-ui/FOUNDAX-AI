@@ -1,3 +1,4 @@
+from formula_reference_guide import show_reference_guide
 
 import math
 
@@ -554,3 +555,7 @@ else:
         "the detailed calculation report."
     )
 
+
+
+# Educational glossary and standards (does not alter calculations)
+show_reference_guide("cost")

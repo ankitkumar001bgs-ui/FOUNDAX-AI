@@ -1,3 +1,4 @@
+from formula_reference_guide import show_reference_guide
 
 import json
 import math
@@ -564,3 +565,7 @@ st.caption(
     "FOUNDAX AI | Validation and Testing Module"
 )
 
+
+
+# Educational glossary and standards (does not alter calculations)
+show_reference_guide("validation")

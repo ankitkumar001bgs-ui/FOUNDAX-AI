@@ -1,3 +1,4 @@
+from formula_reference_guide import show_reference_guide
 
 import math
 from pathlib import Path
@@ -578,3 +579,7 @@ st.caption(
 from download_model import ensure_model
 
 ensure_model()
+
+
+# Educational glossary and standards (does not alter calculations)
+show_reference_guide("ml")
