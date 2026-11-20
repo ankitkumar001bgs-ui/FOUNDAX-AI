@@ -15,17 +15,16 @@ import streamlit as st
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 
-METRICS_PATH = (
-    PROJECT_DIR
-    / "machine_learning"
-    / "model_metrics_v2.json"
-)
+# The supplied evaluation artifacts are stored at the project root.
+# Support either the root or machine_learning/ for older installations.
+def find_evaluation_artifact(filename):
+    for candidate in (PROJECT_DIR / filename, PROJECT_DIR / "machine_learning" / filename):
+        if candidate.is_file():
+            return candidate
+    return PROJECT_DIR / filename
 
-TEST_RESULTS_PATH = (
-    PROJECT_DIR
-    / "machine_learning"
-    / "test_predictions_v2.csv"
-)
+METRICS_PATH = find_evaluation_artifact("model_metrics_v2.json")
+TEST_RESULTS_PATH = find_evaluation_artifact("test_predictions_v2.csv")
 
 TEST_SCRIPT = PROJECT_DIR / "test_footing.py"
 
@@ -379,8 +378,8 @@ if METRICS_PATH.exists():
 
 else:
     st.warning(
-        "Model evaluation file not found. "
-        "Run train_model_v2.py first."
+        "Model evaluation file is missing. Expected model_metrics_v2.json "
+        "in the project root or machine_learning folder."
     )
 
 # ==========================================
@@ -455,8 +454,8 @@ if TEST_RESULTS_PATH.exists():
 
 else:
     st.warning(
-        "Test prediction file not found. "
-        "Run train_model_v2.py first."
+        "Test prediction file is missing. Expected test_predictions_v2.csv "
+        "in the project root or machine_learning folder."
     )
 
 # ==========================================
