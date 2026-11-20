@@ -1,11 +1,6 @@
 
 import streamlit as st
 
-st.set_page_config(
-    page_title="FOUNDAX AI | Project Overview",
-    layout="wide"
-)
-
 st.title("FOUNDAX AI")
 st.subheader(
     "ML-Based Prediction and Preliminary "

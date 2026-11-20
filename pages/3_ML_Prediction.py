@@ -18,11 +18,6 @@ from sklearn.metrics import (
 # MACHINE LEARNING PREDICTION AND EVALUATION
 # ==========================================
 
-st.set_page_config(
-    page_title="FOOTOPT AI | Machine Learning",
-    layout="wide"
-)
-
 st.title("Machine Learning-Based Footing Prediction")
 
 st.write(

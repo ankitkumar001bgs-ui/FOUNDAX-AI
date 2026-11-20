@@ -19,72 +19,18 @@ ROOT = Path(__file__).resolve().parent
 PAGES = ROOT / "pages"
 
 # ==========================================
-# Project Modules
+# Consolidated navigation: 6 workspaces instead of 16 sidebar pages
 # ==========================================
-
-MODULES = [
-    (
-        "Project Overview",
-        "1_Project_Overview.py",
-        "Project background, objectives and methodology",
-    ),
-    (
-        "Isolated Footing Analysis",
-        "2_Isolated_Footing_Analysis.py",
-        "Preliminary area sizing and structural demands",
-    ),
-    (
-        "ML Prediction",
-        "3_ML_Prediction.py",
-        "Random Forest prediction and synthetic-data test metrics",
-    ),
-    (
-        "Cost Optimization",
-        "4_Cost_Optimization.py",
-        "Illustrative cost model and Differential Evolution",
-    ),
-    (
-        "Validation and Testing",
-        "5_Validation_and_Testing.py",
-        "Automated tests, evaluation and limitations",
-    ),
-    (
-        "Combined Footing Analysis",
-        "6_Combined_Footing_Analysis.py",
-        "Two-column geometry and idealized bearing pressures",
-    ),
-    (
-        "Engineering PDF Report",
-        "7_Engineering_Report.py",
-        "Downloadable preliminary isolated footing calculations",
-    ),
-    (
-        "Footing Drawing Generator",
-        "8_Footing_Drawing_Generator.py",
-        "2D plan, section and interactive 3D reinforcement",
-    ),
-    (
-        "Real Building Case Study",
-        "9_Real_Building_Case_Study.py",
-        "Editable building column schedule and preliminary footing screening",
-    ),
+GROUPS = [
+    ("Footing Analysis", "01_Analysis.py", "Isolated, combined, bearing and structural screening"),
+    ("Machine Learning", "02_Machine_Learning.py", "Prediction, comparison and cross-validation"),
+    ("Cost & Optimization", "03_Optimization.py", "Optimization and complete cost worksheet"),
+    ("Building Case Study", "04_Case_Study.py", "Actual building inputs and drawing comparison"),
+    ("Reports & Drawings", "05_Reports.py", "Engineering reports and footing drawings"),
+    ("Verification & Audit", "06_Verification.py", "Testing, evidence and submission readiness"),
 ]
-
-# ==========================================
-# Register Available Pages
-# ==========================================
-
-registered_pages = {}
-
-for name, filename, description in MODULES:
-    page_path = PAGES / filename
-
-    if page_path.is_file():
-        registered_pages[filename] = st.Page(
-            f"pages/{filename}",
-            title=name,
-            help=description,
-        )
+registered_pages = {filename: st.Page(f"workspaces/{filename}", title=name, help=description) for name,filename,description in GROUPS}
+MODULES = GROUPS
 
 # ==========================================
 # Home Dashboard
@@ -149,7 +95,7 @@ def home():
             else:
 
                 st.info(
-                    f"Page not found: pages/{filename}. "
+                    f"Page not found: workspaces/{filename}. "
                     "Check the file location and spelling in GitHub."
                 )
 
@@ -196,7 +142,7 @@ def welcome():
             unsafe_allow_html=True,
         )
         st.markdown("<div style='height: 12px'></div>", unsafe_allow_html=True)
-        if st.button("Let's Get Started  →", type="primary", use_container_width=True):
+        if st.button("Let's Get Started", type="primary", use_container_width=True):
             st.session_state["foundax_started"] = True
             st.switch_page(home_page)
         st.caption("Educational prototype • Preliminary results only • Not for construction")
@@ -209,21 +155,18 @@ def welcome():
 home_page = st.Page(
     home,
     title="Home",
-    default=False,
+    default=st.session_state.get("foundax_started", False),
 )
 
 welcome_page = st.Page(
     welcome,
     title="Welcome",
-    default=True,
+    default=not st.session_state.get("foundax_started", False),
 )
 
-navigation_sections = {
-    "Welcome": [welcome_page],
-    "Home": [home_page],
-}
+navigation_sections = ({"Home": [home_page]} if st.session_state.get("foundax_started", False) else {"Welcome": [welcome_page]})
 
-if registered_pages:
+if registered_pages and st.session_state.get("foundax_started", False):
     navigation_sections["Project Modules"] = list(
         registered_pages.values()
     )

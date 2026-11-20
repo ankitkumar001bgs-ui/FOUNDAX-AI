@@ -13,11 +13,6 @@ import streamlit as st
 # VALIDATION AND TESTING DASHBOARD
 # ==========================================
 
-st.set_page_config(
-    page_title="FOOTOPT AI | Validation",
-    layout="wide"
-)
-
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 METRICS_PATH = (

@@ -3,11 +3,6 @@ import math
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(
-    page_title="FOOTOPT AI | Isolated Footing Analysis",
-    layout="wide"
-)
-
 st.title("Isolated Footing Analysis")
 st.write(
     "Preliminary analysis of a centrally loaded "

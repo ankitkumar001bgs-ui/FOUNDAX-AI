@@ -24,11 +24,6 @@ from reportlab.lib.units import inch
 # ENGINEERING CALCULATION REPORT
 # ==========================================
 
-st.set_page_config(
-    page_title="FOUNDAX AI | Engineering Report",
-    layout="wide"
-)
-
 st.title("Engineering Calculation Report")
 
 st.write(

@@ -55,3 +55,8 @@ h1, h2, h3 {
     background: transparent;
 }
 
+
+/* Hide decorative navigation icons; preserve original dark theme. */
+[data-testid="stSidebarNav"] [data-testid="stIconMaterial"],
+[data-testid="stSidebarNav"] [data-testid="stIconEmoji"],
+[data-testid="stSidebarNav"] a > svg { display: none !important; }

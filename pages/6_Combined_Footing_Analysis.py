@@ -3,11 +3,6 @@ import math
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(
-    page_title="FOUNDAX AI | Combined Footing",
-    layout="wide"
-)
-
 st.title("Combined Footing Analysis")
 
 st.write(

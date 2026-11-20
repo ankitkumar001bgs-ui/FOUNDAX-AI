@@ -5,11 +5,6 @@ import pandas as pd
 import streamlit as st
 from scipy.optimize import differential_evolution
 
-st.set_page_config(
-    page_title="FOUNDAX AI | Cost Optimization",
-    layout="wide"
-)
-
 st.title("Footing Cost Optimization")
 st.subheader("Differential Evolution Algorithm")
 
