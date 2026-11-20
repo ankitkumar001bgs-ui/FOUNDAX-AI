@@ -1,0 +1,5 @@
+1. Back up your current FOUNDAX-AI/app.py.
+2. Copy the included app.py into FOUNDAX-AI/ replacing app.py.
+3. Keep all other files and folders unchanged.
+4. Test: python -m streamlit run app.py
+5. When ready: git add app.py && git commit -m "Add welcome screen" && git push origin main

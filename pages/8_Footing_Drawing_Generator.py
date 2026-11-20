@@ -1,4 +1,3 @@
-from formula_reference_guide import show_reference_guide
 """FOUNDAX AI | Professional preliminary isolated-footing drawing generator.
 
 All input dimensions are schematic; no structural strength or settlement verification.
@@ -422,7 +421,3 @@ st.info('The area allowance is illustrative, not a verified self-weight or settl
 for _, fig in figures:
     plt.close(fig)
 
-
-
-# Educational glossary and standards (does not alter calculations)
-show_reference_guide("drawing")

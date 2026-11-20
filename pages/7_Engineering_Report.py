@@ -1,4 +1,3 @@
-from formula_reference_guide import show_reference_guide
 
 import math
 from io import BytesIO
@@ -690,7 +689,3 @@ else:
         "'Generate Calculation Report'."
     )
 
-
-
-# Educational glossary and standards (does not alter calculations)
-show_reference_guide("report")
